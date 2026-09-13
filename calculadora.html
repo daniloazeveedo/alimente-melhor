@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de IMC — Alimente Melhor</title>
+  <meta name="description" content="Calcule seu Índice de Massa Corporal (IMC) e receba uma orientação clara sobre a faixa de peso.">
+  <meta name="theme-color" content="#ff5406">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8 2 4 6 4 12c0 4 3 8 8 8s8-4 8-8c0-6-4-10-8-10z M12 6c-2 2-3 4-3 6 M12 6c2 2 3 4 3 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-name">Alimente Melhor</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="calculadora.html" class="nav-link">Calculadora</a>
+        <a href="receitas.html" class="nav-link">Receitas</a>
+        <a href="guia.html" class="nav-link">Guia</a>
+        <a href="unidades.html" class="nav-link">Unidades</a>
+      </nav>
+
+      <a href="index.html" class="btn-filled">Início</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading" style="margin-bottom: var(--space-3);">
+          <span class="accent-green">Calcule</span>
+          <span class="dark">seu IMC</span>
+        </h1>
+        <p class="section-sub">
+          O Índice de Massa Corporal é um cálculo simples que ajuda a
+          entender se seu peso está adequado para sua altura. É um ponto
+          de partida — não um diagnóstico.
+        </p>
+
+        <div class="calc-wrapper">
+          <form class="calc-form" id="imc-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="peso">Peso (kg)</label>
+                <input
+                  type="text"
+                  inputmode="decimal"
+                  id="peso"
+                  name="peso"
+                  placeholder="Ex: 70"
+                  autocomplete="off"
+                  required>
+              </div>
+
+              <div class="form-field">
+                <label for="altura">Altura (m ou cm)</label>
+                <input
+                  type="text"
+                  inputmode="decimal"
+                  id="altura"
+                  name="altura"
+                  placeholder="Ex: 1,72 ou 172"
+                  autocomplete="off"
+                  required>
+              </div>
+            </div>
+
+            <div id="form-error" class="form-error" role="alert" aria-live="polite"></div>
+
+            <button type="submit" class="btn-filled large" style="width: 100%; justify-content: center;">
+              Calcular
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14 M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Resultado -->
+          <div class="result-card" id="result-card" aria-live="polite">
+            <div class="result-imc-label">Seu IMC</div>
+            <div class="result-imc-value" id="imc-value">—</div>
+            <div class="result-classification" id="classification">—</div>
+            <p class="result-message" id="result-message"></p>
+
+            <!-- Escala visual -->
+            <div class="scale-bar" aria-hidden="true">
+              <div class="scale-segment blue"></div>
+              <div class="scale-segment green"></div>
+              <div class="scale-segment orange"></div>
+              <div class="scale-segment red-orange"></div>
+              <div class="scale-segment red"></div>
+            </div>
+            <div class="scale-legend">
+              <span>&lt;18,5</span>
+              <span>18,5–25</span>
+              <span>25–30</span>
+              <span>30–40</span>
+              <span>40+</span>
+            </div>
+          </div>
+
+          <!-- Disclaimer -->
+          <div class="disclaimer">
+            <strong>Este conteúdo é educativo</strong> e não substitui a
+            avaliação de um médico ou nutricionista. Para acompanhamento
+            gratuito, procure a UBS mais próxima da sua casa.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-text">Projeto Interdisciplinar 2 · 2º termo · 2º semestre 2026</span>
+      <span class="footer-badge">FATEC Marília</span>
+    </div>
+  </footer>
+
+  <script src="js/imc.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+/* ============================================================
+   Unidades de Saúde — estilos da página
+   Segue o mesmo sistema Foodnoms: 26px radius, flat, two-tone
+   ============================================================ */
+
+/* Busca */
+.busca-wrapper {
+  max-width: 720px;
+  margin: 0 auto var(--space-5);
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.busca-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 560px) {
+  .busca-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.busca-row input {
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  background: var(--color-paper-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.busca-row input:focus {
+  border-color: var(--color-ember-orange);
+}
+
+.busca-row select {
+  font-family: inherit;
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  background: var(--color-paper-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232f2f2f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  padding-right: 48px;
+}
+
+.busca-hint {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  opacity: 0.7;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.busca-error {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-signal-red-orange);
+  margin-top: 8px;
+  min-height: 20px;
+  text-align: center;
+}
+
+.btn-limpar {
+  background: var(--color-paper-white);
+  color: var(--color-graphite);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-demibold);
+  padding: 14px 20px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+}
+
+.btn-limpar:hover {
+  border-color: var(--color-graphite);
+}
+
+/* Resumo dos resultados */
+.resumo {
+  max-width: 720px;
+  margin: 0 auto var(--space-4);
+  text-align: center;
+}
+
+.contagem {
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  margin-bottom: 6px;
+}
+
+.contagem strong {
+  font-weight: var(--weight-bold);
+}
+
+.dica {
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  opacity: 0.7;
+}
+
+.sem-resultados {
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  padding: var(--space-4);
+  background: var(--color-fog);
+  border-radius: var(--radius);
+}
+
+.link-btn {
+  color: var(--color-ember-orange);
+  font-weight: var(--weight-demibold);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Grid de unidades */
+.lista-unidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-3);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.unidade-card {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.unidade-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.unidade-tag {
+  display: inline-block;
+  background: var(--color-paper-white);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  letter-spacing: 0.03em;
+}
+
+/* Cores por tipo */
+.tipo-usf { color: var(--color-verdant-green); }
+.tipo-ubs { color: var(--color-ember-orange); }
+.tipo-farmaciamunicipal { color: var(--color-iris); }
+.tipo-policlinica { color: var(--color-electric-blue); }
+.tipo-prontoatendimento { color: var(--color-sunset-orange); }
+.tipo-upaurgencia { color: var(--color-signal-red-orange); }
+.tipo-servicodeemergencia { color: var(--color-alert-red); }
+.tipo-outro { color: var(--color-graphite); }
+
+.unidade-nome {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.unidade-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-linha {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-label {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.info-valor {
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  line-height: 1.5;
+}
+
+.unidade-link {
+  color: var(--color-ember-orange);
+  font-weight: var(--weight-demibold);
+}
+
+.unidade-link:hover {
+  color: var(--color-signal-red-orange);
+}
+
+/* Responsáveis */
+.unidade-responsaveis {
+  border-top: 1px solid var(--color-paper-white);
+  padding-top: var(--space-3);
+}
+
+.unidade-responsaveis h4 {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.resp-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.resp-cargo {
+  font-size: var(--text-tiny);
+  font-family: var(--font-system);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  opacity: 0.55;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resp-nome {
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+}
+
+.unidade-obs {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  background: var(--color-paper-white);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  opacity: 0.85;
+}
+
+/* Aviso da fonte */
+.aviso-fonte {
+  max-width: 720px;
+  margin: var(--space-6) auto 0;
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  text-align: center;
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.aviso-fonte strong {
+  font-weight: var(--weight-bold);
+  opacity: 1;
+}

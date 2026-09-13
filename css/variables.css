@@ -1,0 +1,85 @@
+/* ============================================================
+   Alimente Melhor — Design Tokens
+   Baseado no sistema de estilo Foodnoms
+   ============================================================ */
+
+:root {
+  /* -----------------------------------
+     Cores — paleta fechada, não adicionar novas
+     ----------------------------------- */
+
+  /* Superfícies */
+  --color-paper-white: #ffffff;        /* canvas dominante */
+  --color-fog: #f5f5f5;                /* canvas alternativo (cards, seções) */
+
+  /* Acentos quentes */
+  --color-ember-orange: #ff5406;       /* acento de marca (botões preenchidos, logo) */
+  --color-sunset-orange: #ff6d00;      /* headings secundários */
+  --color-signal-red-orange: #ff3400;  /* dado negativo / excesso */
+  --color-alert-red: #ff001e;          /* alerta máximo */
+
+  /* Acentos frios */
+  --color-verdant-green: #00b33f;      /* dado positivo / progresso */
+  --color-sky-blue: #00a9dd;           /* categorias de dados */
+  --color-mist-blue: #72a2c5;          /* dado secundário */
+  --color-iris: #5856de;               /* headings em páginas de suporte */
+  --color-electric-blue: #0099f9;      /* highlights em suporte */
+  --color-plum: #bd4be5;               /* tags de categoria */
+  --color-amber: #945300;              /* texto de dado denso */
+
+  /* Texto */
+  --color-graphite: #2f2f2f;           /* texto primário */
+  --color-charcoal: #000000;           /* ênfase máxima (uso raro) */
+
+  /* -----------------------------------
+     Tipografia
+     ----------------------------------- */
+
+  /* Fonte primária — Nunito Sans como substituto oficial de Aquawax Pro */
+  --font-primary: 'Nunito Sans', ui-sans-serif, system-ui, -apple-system,
+                  BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Fonte de UI micro (< 12px) */
+  --font-system: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", Roboto, sans-serif;
+
+  /* Escala tipográfica — NUNCA interpolar entre estes valores */
+  --text-tiny: 12px;         /* line-height 1.2 */
+  --text-caption: 14px;      /* line-height 1.2 */
+  --text-body-sm: 16px;      /* line-height 1.4 */
+  --text-body: 17px;         /* line-height 1.6 */
+  --text-subheading: 20px;   /* line-height 1.8 */
+  --text-heading-sm: 22px;   /* line-height 1.2 */
+  --text-heading: 30px;      /* line-height 1.2 — section headings */
+  --text-display: 60px;      /* line-height 1.2 — hero */
+
+  /* Pesos */
+  --weight-medium: 500;
+  --weight-demibold: 600;
+  --weight-bold: 700;
+
+  /* -----------------------------------
+     Espaçamento — base 8px
+     ----------------------------------- */
+  --space-1: 8px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-7: 56px;
+  --space-8: 64px;
+  --space-12: 96px;   /* section gap */
+
+  /* -----------------------------------
+     Layout
+     ----------------------------------- */
+  --page-max-width: 1200px;
+  --section-gap: 96px;
+  --card-padding: 32px;
+  --element-gap: 20px;
+
+  /* -----------------------------------
+     Border radius — 26px em TUDO interativo/card
+     ----------------------------------- */
+  --radius: 26px;
+}

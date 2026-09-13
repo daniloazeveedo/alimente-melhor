@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encontre uma UBS ou USF — Alimente Melhor</title>
+  <meta name="description" content="Digite seu CEP, bairro ou nome de unidade e encontre a Unidade Básica ou de Saúde da Família mais próxima em Marília.">
+  <meta name="theme-color" content="#ff5406">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/unidades.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8 2 4 6 4 12c0 4 3 8 8 8s8-4 8-8c0-6-4-10-8-10z M12 6c-2 2-3 4-3 6 M12 6c2 2 3 4 3 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-name">Alimente Melhor</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="calculadora.html" class="nav-link">Calculadora</a>
+        <a href="receitas.html" class="nav-link">Receitas</a>
+        <a href="guia.html" class="nav-link">Guia</a>
+        <a href="unidades.html" class="nav-link">Unidades</a>
+      </nav>
+
+      <a href="index.html" class="btn-filled">Início</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading" style="margin-bottom: var(--space-3);">
+          <span class="accent-green">Encontre uma unidade</span>
+          <span class="dark">perto de você</span>
+        </h1>
+        <p class="section-sub">
+          Digite seu CEP, bairro ou o nome da unidade. O atendimento
+          na UBS e na USF é gratuito e oferecido pelo SUS. Se precisa
+          de acompanhamento nutricional ou médico para questões de
+          peso, esse é o caminho.
+        </p>
+
+        <!-- Busca -->
+        <div class="busca-wrapper">
+          <div class="busca-row">
+            <input
+              type="text"
+              id="busca"
+              placeholder="Ex: 17500-000, Jardim América, ou Aniz Badra"
+              autocomplete="off"
+              inputmode="search">
+
+            <select id="filtro-tipo" aria-label="Filtrar por tipo de unidade">
+              <option value="todos">Todas</option>
+              <option value="usf">Só USF</option>
+              <option value="ubs">Só UBS</option>
+              <option value="outros">Outros serviços</option>
+            </select>
+
+            <button type="button" class="btn-limpar" id="btn-limpar">Limpar</button>
+          </div>
+          <div class="busca-error" id="busca-error" role="alert" aria-live="polite"></div>
+          <p class="busca-hint">
+            Dica: se digitar um CEP de 8 dígitos (ex: 17501234), procuramos
+            unidades no seu bairro automaticamente.
+          </p>
+        </div>
+
+        <!-- Resumo dos resultados -->
+        <div class="resumo" id="resumo" aria-live="polite"></div>
+
+        <!-- Lista -->
+        <div class="lista-unidades" id="lista-unidades"></div>
+
+        <!-- Fonte / última atualização -->
+        <div class="aviso-fonte">
+          <strong>Última atualização:</strong> <span id="atualizado-em">—</span>.
+          Fonte: Secretaria Municipal de Saúde de Marília. Os responsáveis
+          técnicos podem mudar — em caso de dúvida, ligue para a unidade
+          antes de comparecer.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-text">Projeto Interdisciplinar 2 · 2º termo · 2º semestre 2026</span>
+      <span class="footer-badge">FATEC Marília</span>
+    </div>
+  </footer>
+
+  <script src="js/unidades.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

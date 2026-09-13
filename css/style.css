@@ -1,0 +1,716 @@
+/* ============================================================
+   Alimente Melhor — Estilos base
+   Regras do sistema:
+   - Radius 26px em TUDO interativo (botão, card, tag, input)
+   - Zero sombra, zero gradiente — sistema flat
+   - Headlines duas cores: cor de resultado + Graphite
+   - Texto colorido apenas sobre branco ou Fog
+   ============================================================ */
+
+/* -----------------------------------
+   Reset básico
+   ----------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--color-graphite);
+  background: var(--color-paper-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* -----------------------------------
+   Layout container
+   ----------------------------------- */
+.container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.section {
+  padding: var(--section-gap) 0;
+}
+
+/* -----------------------------------
+   Header
+   ----------------------------------- */
+.site-header {
+  padding: var(--space-3) 0;
+  background: var(--color-paper-white);
+  border-bottom: 1px solid var(--color-fog);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-graphite);
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  background: var(--color-ember-orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-paper-white);
+  font-weight: var(--weight-bold);
+  font-size: 18px;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.nav-link {
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  padding: 8px 4px;
+}
+
+.nav-link:hover {
+  color: var(--color-ember-orange);
+}
+
+/* -----------------------------------
+   Botão preenchido (brand accent)
+   Ember Orange preenchido — radius 26px
+   ----------------------------------- */
+.btn-filled {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-ember-orange);
+  color: var(--color-paper-white);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-demibold);
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  transition: background 0.15s ease;
+}
+
+.btn-filled:hover {
+  background: var(--color-signal-red-orange);
+}
+
+.btn-filled.large {
+  font-size: var(--text-body);
+  padding: 16px 28px;
+}
+
+/* Botão escuro (Graphite) — variante do App Store Badge */
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-graphite);
+  color: var(--color-paper-white);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-demibold);
+  padding: 12px 20px;
+  border-radius: var(--radius);
+}
+
+/* -----------------------------------
+   Hero
+   ----------------------------------- */
+.hero {
+  padding: var(--space-8) 0 var(--space-12);
+  text-align: center;
+  background: var(--color-paper-white);
+}
+
+.hero-headline {
+  font-size: var(--text-display);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Padrão two-tone: cor de resultado + Graphite */
+.hero-headline .accent-green { color: var(--color-verdant-green); }
+.hero-headline .accent-orange { color: var(--color-ember-orange); }
+.hero-headline .dark { color: var(--color-graphite); }
+
+.hero-sub {
+  font-size: var(--text-subheading);
+  font-weight: var(--weight-medium);
+  line-height: 1.8;
+  color: var(--color-graphite);
+  max-width: 600px;
+  margin: 0 auto var(--space-5);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+/* Hero mockups — 3 telas em fanning */
+.hero-mockups {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: -20px;
+  flex-wrap: wrap;
+}
+
+.phone-mockup {
+  width: 260px;
+  height: 520px;
+  background: var(--color-paper-white);
+  border: 8px solid var(--color-graphite);
+  border-radius: 40px;
+  padding: 24px 16px;
+  margin: 0 -20px;
+  position: relative;
+}
+
+.phone-mockup.rotate-left { transform: rotate(-6deg); }
+.phone-mockup.rotate-right { transform: rotate(6deg); }
+.phone-mockup.center { z-index: 2; }
+
+/* Conteúdo interno do mockup — mantém estilo Foodnoms */
+.mockup-inner-headline {
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--color-graphite);
+}
+
+.mockup-inner-headline .g { color: var(--color-verdant-green); }
+
+.mockup-inner-card {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.mockup-metric {
+  font-size: 30px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  color: var(--color-verdant-green);
+}
+
+.mockup-metric.warn { color: var(--color-signal-red-orange); }
+
+.mockup-label {
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  margin-top: 4px;
+}
+
+/* -----------------------------------
+   Section heading — 30px Bold two-tone
+   ----------------------------------- */
+.section-heading {
+  font-size: var(--text-heading);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-5);
+  text-align: center;
+}
+
+.section-heading .accent-green { color: var(--color-verdant-green); }
+.section-heading .accent-orange { color: var(--color-ember-orange); }
+.section-heading .dark { color: var(--color-graphite); }
+
+.section-sub {
+  font-size: var(--text-subheading);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--color-graphite);
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* -----------------------------------
+   Feature cards — 26px radius, fundo Fog
+   ----------------------------------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.feature-card {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--card-padding);
+  text-align: center;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-paper-white);
+  font-size: 30px;
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-3);
+}
+
+.feature-icon.orange { background: var(--color-ember-orange); }
+.feature-icon.green { background: var(--color-verdant-green); }
+.feature-icon.blue { background: var(--color-sky-blue); }
+.feature-icon.iris { background: var(--color-iris); }
+
+.feature-title {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.feature-text {
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--color-graphite);
+  opacity: 0.75;
+}
+
+/* -----------------------------------
+   Card CTA — banner de download
+   ----------------------------------- */
+.cta-card {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-5);
+  text-align: center;
+}
+
+.cta-card .section-heading {
+  margin-bottom: var(--space-1);
+}
+
+.cta-card .section-sub {
+  margin-bottom: var(--space-3);
+}
+
+/* -----------------------------------
+   Calculadora IMC
+   ----------------------------------- */
+.calc-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.calc-form {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.form-field label {
+  display: block;
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  margin-bottom: 8px;
+}
+
+.form-field input {
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  background: var(--color-paper-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-field input:focus {
+  border-color: var(--color-ember-orange);
+}
+
+.form-error {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-signal-red-orange);
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+/* Resultado */
+.result-card {
+  background: var(--color-paper-white);
+  border: 3px solid var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  text-align: center;
+  display: none;
+}
+
+.result-card.visible { display: block; }
+
+.result-imc-label {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.result-imc-value {
+  font-size: var(--text-display);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--space-1);
+}
+
+.result-classification {
+  font-size: var(--text-heading);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--space-3);
+}
+
+.result-message {
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--color-graphite);
+  max-width: 480px;
+  margin: 0 auto var(--space-3);
+  opacity: 0.85;
+}
+
+/* Cores de resultado por faixa */
+.color-blue { color: var(--color-sky-blue); }
+.color-green { color: var(--color-verdant-green); }
+.color-orange { color: var(--color-sunset-orange); }
+.color-red-orange { color: var(--color-signal-red-orange); }
+.color-red { color: var(--color-alert-red); }
+
+/* Barra de escala */
+.scale-bar {
+  display: flex;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 12px;
+  margin: var(--space-3) 0;
+}
+
+.scale-segment {
+  flex: 1;
+  height: 100%;
+}
+
+.scale-segment.blue { background: var(--color-sky-blue); }
+.scale-segment.green { background: var(--color-verdant-green); }
+.scale-segment.orange { background: var(--color-sunset-orange); }
+.scale-segment.red-orange { background: var(--color-signal-red-orange); }
+.scale-segment.red { background: var(--color-alert-red); }
+
+.scale-legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-tiny);
+  font-family: var(--font-system);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  opacity: 0.7;
+}
+
+/* -----------------------------------
+   Receitas grid
+   ----------------------------------- */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+.recipe-card {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--color-paper-white);
+  color: var(--color-verdant-green);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-1);
+}
+
+.recipe-tag.orange { color: var(--color-ember-orange); }
+.recipe-tag.iris { color: var(--color-iris); }
+
+.recipe-title {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  margin-bottom: var(--space-1);
+  letter-spacing: -0.01em;
+}
+
+.recipe-desc {
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+  color: var(--color-graphite);
+  opacity: 0.75;
+  margin-bottom: var(--space-3);
+}
+
+.recipe-details {
+  border-top: 1px solid var(--color-paper-white);
+  padding-top: var(--space-3);
+  margin-top: auto;
+}
+
+.recipe-details h4 {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.recipe-details ul {
+  list-style: none;
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--color-graphite);
+}
+
+.recipe-details li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.recipe-details li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-verdant-green);
+}
+
+/* -----------------------------------
+   Guia — passos numerados
+   ----------------------------------- */
+.step-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.step-item {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--card-padding);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+@media (max-width: 480px) {
+  .step-item { grid-template-columns: 1fr; }
+}
+
+.step-number {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+  background: var(--color-ember-orange);
+  color: var(--color-paper-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-heading);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+}
+
+.step-content h3 {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.step-content p {
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--color-graphite);
+  opacity: 0.85;
+}
+
+/* -----------------------------------
+   Disclaimer / aviso
+   ----------------------------------- */
+.disclaimer {
+  background: var(--color-fog);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--color-graphite);
+  opacity: 0.85;
+  max-width: 640px;
+  margin: var(--space-4) auto 0;
+  text-align: center;
+}
+
+.disclaimer strong {
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  opacity: 1;
+}
+
+/* -----------------------------------
+   Footer
+   ----------------------------------- */
+.site-footer {
+  background: var(--color-paper-white);
+  border-top: 1px solid var(--color-fog);
+  padding: var(--space-6) 0;
+  margin-top: var(--space-12);
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-graphite);
+  opacity: 0.7;
+}
+
+.footer-badge {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-demibold);
+  color: var(--color-graphite);
+  background: var(--color-fog);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+}
+
+/* -----------------------------------
+   Responsividade — hero display 60→40 em telas pequenas
+   ----------------------------------- */
+@media (max-width: 720px) {
+  .hero-headline { font-size: 40px; }
+  .section-heading { font-size: 26px; }
+  .result-imc-value { font-size: 48px; }
+  .result-classification { font-size: 24px; }
+
+  .site-nav { display: none; }
+
+  .phone-mockup { width: 200px; height: 400px; }
+  .phone-mockup.rotate-left,
+  .phone-mockup.rotate-right { display: none; }
+}
