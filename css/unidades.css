@@ -7,7 +7,7 @@
 .busca-wrapper {
   max-width: 720px;
   margin: 0 auto var(--space-5);
-  background: var(--color-fog);
+  background: var(--surface-elevated);
   border-radius: var(--radius);
   padding: var(--space-4);
 }
@@ -30,8 +30,8 @@
   font-family: inherit;
   font-size: var(--text-body);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
-  background: var(--color-paper-white);
+  color: var(--text-primary);
+  background: var(--surface-input);
   border: 2px solid transparent;
   border-radius: var(--radius);
   padding: 14px 20px;
@@ -47,8 +47,8 @@
   font-family: inherit;
   font-size: var(--text-body-sm);
   font-weight: var(--weight-demibold);
-  color: var(--color-graphite);
-  background: var(--color-paper-white);
+  color: var(--text-primary);
+  background: var(--surface-input);
   border: 2px solid transparent;
   border-radius: var(--radius);
   padding: 14px 20px;
@@ -64,8 +64,7 @@
 .busca-hint {
   font-size: var(--text-caption);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
-  opacity: 0.7;
+  color: var(--text-muted);
   margin-top: 12px;
   text-align: center;
 }
@@ -80,8 +79,8 @@
 }
 
 .btn-limpar {
-  background: var(--color-paper-white);
-  color: var(--color-graphite);
+  background: var(--surface-input);
+  color: var(--text-primary);
   font-size: var(--text-body-sm);
   font-weight: var(--weight-demibold);
   padding: 14px 20px;
@@ -103,27 +102,27 @@
 .contagem {
   font-size: var(--text-body);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
+  color: var(--text-primary);
   margin-bottom: 6px;
 }
 
 .contagem strong {
   font-weight: var(--weight-bold);
+  color: var(--text-primary);
 }
 
 .dica {
   font-size: var(--text-body-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
-  opacity: 0.7;
+  color: var(--text-muted);
 }
 
 .sem-resultados {
   font-size: var(--text-body);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
+  color: var(--text-primary);
   padding: var(--space-4);
-  background: var(--color-fog);
+  background: var(--surface-elevated);
   border-radius: var(--radius);
 }
 
@@ -149,7 +148,7 @@
 }
 
 .unidade-card {
-  background: var(--color-fog);
+  background: var(--surface-elevated);
   border-radius: var(--radius);
   padding: var(--card-padding);
   display: flex;
@@ -166,7 +165,7 @@
 
 .unidade-tag {
   display: inline-block;
-  background: var(--color-paper-white);
+  background: var(--surface-primary);
   font-size: var(--text-caption);
   font-weight: var(--weight-demibold);
   padding: 6px 14px;
@@ -187,7 +186,7 @@
 .unidade-nome {
   font-size: var(--text-heading-sm);
   font-weight: var(--weight-bold);
-  color: var(--color-graphite);
+  color: var(--text-primary);
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -207,8 +206,7 @@
 .info-label {
   font-size: var(--text-caption);
   font-weight: var(--weight-demibold);
-  color: var(--color-graphite);
-  opacity: 0.6;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -216,7 +214,7 @@
 .info-valor {
   font-size: var(--text-body-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
+  color: var(--text-primary);
   line-height: 1.5;
 }
 
@@ -231,15 +229,14 @@
 
 /* Responsáveis */
 .unidade-responsaveis {
-  border-top: 1px solid var(--color-paper-white);
+  border-top: 1px solid var(--border-subtle);
   padding-top: var(--space-3);
 }
 
 .unidade-responsaveis h4 {
   font-size: var(--text-caption);
   font-weight: var(--weight-demibold);
-  color: var(--color-graphite);
-  opacity: 0.6;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 12px;
@@ -261,8 +258,7 @@
   font-size: var(--text-tiny);
   font-family: var(--font-system);
   font-weight: var(--weight-demibold);
-  color: var(--color-graphite);
-  opacity: 0.55;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -270,35 +266,33 @@
 .resp-nome {
   font-size: var(--text-body-sm);
   font-weight: var(--weight-demibold);
-  color: var(--color-graphite);
+  color: var(--text-primary);
 }
 
 .unidade-obs {
   font-size: var(--text-caption);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
-  background: var(--color-paper-white);
+  color: var(--text-secondary);
+  background: var(--surface-primary);
   padding: 12px 16px;
   border-radius: var(--radius);
-  opacity: 0.85;
 }
 
 /* Aviso da fonte */
 .aviso-fonte {
   max-width: 720px;
   margin: var(--space-6) auto 0;
-  background: var(--color-fog);
+  background: var(--surface-elevated);
   border-radius: var(--radius);
   padding: var(--space-3);
   text-align: center;
   font-size: var(--text-caption);
   font-weight: var(--weight-medium);
-  color: var(--color-graphite);
-  opacity: 0.8;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .aviso-fonte strong {
   font-weight: var(--weight-bold);
-  opacity: 1;
+  color: var(--text-primary);
 }

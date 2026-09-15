@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lembretes de água — Alimente Melhor</title>
+  <meta name="description" content="Receba lembretes para beber água ao longo do dia. Simples e sem cadastro.">
+  <meta name="theme-color" content="#ff5406">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/peso.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8 2 4 6 4 12c0 4 3 8 8 8s8-4 8-8c0-6-4-10-8-10z M12 6c-2 2-3 4-3 6 M12 6c2 2 3 4 3 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-name">Alimente Melhor</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="calculadora.html" class="nav-link">Calculadora</a>
+        <a href="peso.html" class="nav-link">Meu peso</a>
+        <a href="receitas.html" class="nav-link">Receitas</a>
+        <a href="guia.html" class="nav-link">Guia</a>
+        <a href="rotulo.html" class="nav-link">Rótulo</a>
+        <a href="unidades.html" class="nav-link">Unidades</a>
+      </nav>
+      <a href="index.html" class="btn-filled">Início</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading" style="margin-bottom: var(--space-3);">
+          <span class="accent-green">Lembretes</span>
+          <span class="dark">para beber água</span>
+        </h1>
+        <p class="section-sub">
+          Beber água ao longo do dia ajuda no funcionamento do corpo e
+          na saciedade. A recomendação geral é cerca de 2 litros por
+          dia, mas isso varia com peso, atividade e clima.
+        </p>
+
+        <div class="peso-wrapper">
+
+          <!-- Config lembretes -->
+          <div class="peso-form">
+            <h3 style="font-size: var(--text-heading-sm); font-weight: var(--weight-bold); margin-bottom: var(--space-3);">Ativar lembretes</h3>
+
+            <div class="form-field" style="margin-bottom: var(--space-3);">
+              <label for="intervalo">Lembrar a cada</label>
+              <select id="intervalo" class="peso-btn-secondary" style="width:100%;">
+                <option value="30">30 minutos</option>
+                <option value="60" selected>1 hora</option>
+                <option value="90">1 hora e 30 min</option>
+                <option value="120">2 horas</option>
+                <option value="180">3 horas</option>
+              </select>
+            </div>
+
+            <p id="status" style="margin-bottom: var(--space-3); font-size: var(--text-body);">Lembretes desativados.</p>
+            <p id="proximo-lembrete" style="margin-bottom: var(--space-3); font-size: var(--text-body-sm); color: var(--color-graphite); opacity: 0.7;"></p>
+
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button type="button" class="btn-filled" id="btn-ativar">
+                Ativar lembretes
+              </button>
+              <button type="button" class="peso-btn-secondary" id="btn-desativar" style="display:none;">
+                Desativar
+              </button>
+            </div>
+          </div>
+
+          <!-- Contador de copos -->
+          <div class="peso-chart-card" style="text-align: center;">
+            <h3 style="font-size: var(--text-heading-sm); font-weight: var(--weight-bold); margin-bottom: var(--space-3);">Copos de hoje</h3>
+
+            <div style="font-size: 72px; font-weight: var(--weight-bold); color: var(--color-sky-blue); line-height: 1; margin-bottom: 8px;">
+              <span id="copo-contador">0</span>
+            </div>
+            <p style="font-size: var(--text-body-sm); color: var(--color-graphite); opacity: 0.7; margin-bottom: var(--space-4);">
+              Meta sugerida: 8 copos por dia (aproximadamente 2 litros).
+            </p>
+
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+              <button type="button" class="btn-filled large" id="copo-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 5v14 M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                Bebi um copo
+              </button>
+              <button type="button" class="peso-btn-danger" id="copo-reset">
+                Zerar
+              </button>
+            </div>
+          </div>
+
+          <div class="privacy-note">
+            <strong>Como funciona:</strong> os lembretes tocam enquanto
+            este site estiver aberto em uma aba do navegador ou como
+            aplicativo (após "Adicionar à tela inicial"). Se você fechar
+            todas as abas, os lembretes param até você abrir de novo.
+            Nada é enviado para servidor.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-text">Projeto Interdisciplinar 2 · 2º termo · 2º semestre 2026</span>
+      <span class="footer-badge">FATEC Marília</span>
+    </div>
+  </footer>
+
+  <script src="js/ui.js"></script>
+  <script src="js/lembretes.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

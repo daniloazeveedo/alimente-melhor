@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entenda o rótulo — Alimente Melhor</title>
+  <meta name="description" content="Aprenda a ler rótulos de alimentos, entender os novos selos frontais da Anvisa e identificar ultraprocessados.">
+  <meta name="theme-color" content="#ff5406">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8 2 4 6 4 12c0 4 3 8 8 8s8-4 8-8c0-6-4-10-8-10z M12 6c-2 2-3 4-3 6 M12 6c2 2 3 4 3 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-name">Alimente Melhor</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="calculadora.html" class="nav-link">Calculadora</a>
+        <a href="peso.html" class="nav-link">Meu peso</a>
+        <a href="receitas.html" class="nav-link">Receitas</a>
+        <a href="guia.html" class="nav-link">Guia</a>
+        <a href="rotulo.html" class="nav-link">Rótulo</a>
+        <a href="unidades.html" class="nav-link">Unidades</a>
+      </nav>
+      <a href="index.html" class="btn-filled">Início</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-heading" style="margin-bottom: var(--space-3);">
+          <span class="accent-orange">Entenda o rótulo</span>
+          <span class="dark">antes de comprar</span>
+        </h1>
+        <p class="section-sub">
+          O rótulo é o principal aliado de quem quer comer melhor. Uma
+          olhada rápida na embalagem já mostra se um produto é uma boa
+          escolha — ou se é melhor procurar outro.
+        </p>
+
+        <!-- Novos selos frontais da Anvisa -->
+        <div style="max-width: 800px; margin: 0 auto var(--space-6);">
+          <h2 class="section-heading" style="font-size: var(--text-heading); margin-bottom: var(--space-3);">
+            <span class="accent-orange">Os novos selos</span>
+            <span class="dark">na frente da embalagem</span>
+          </h2>
+          <p class="section-sub" style="margin-bottom: var(--space-4);">
+            Desde outubro de 2022, a Anvisa exige que produtos com muito açúcar,
+            gordura saturada ou sódio tenham um selo preto na parte de cima da
+            embalagem. Quando ver esse selo, pense duas vezes antes de comprar.
+          </p>
+
+          <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <div class="feature-card">
+              <div style="width:120px;height:120px;background:#000;border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;margin:0 auto var(--space-3);padding:10px;text-align:center;box-sizing:border-box;">
+                <span style="font-size:11px;font-weight:600;letter-spacing:0.04em;line-height:1.1;">ALTO EM</span>
+                <span style="font-size:14px;font-weight:700;line-height:1.1;margin-top:4px;">AÇÚCAR<br>ADICIONADO</span>
+              </div>
+              <h3 class="feature-title">Alto em açúcar</h3>
+              <p class="feature-text">
+                Excesso de açúcar aumenta o risco de obesidade, diabetes
+                tipo 2 e cáries. Presente em refrigerantes, biscoitos e cereais matinais.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div style="width:120px;height:120px;background:#000;border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;margin:0 auto var(--space-3);padding:10px;text-align:center;box-sizing:border-box;">
+                <span style="font-size:11px;font-weight:600;letter-spacing:0.04em;line-height:1.1;">ALTO EM</span>
+                <span style="font-size:14px;font-weight:700;line-height:1.1;margin-top:4px;">GORDURA<br>SATURADA</span>
+              </div>
+              <h3 class="feature-title">Alto em gordura</h3>
+              <p class="feature-text">
+                Consumo em excesso está ligado a doenças do coração.
+                Presente em salgadinhos, embutidos e comidas prontas.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div style="width:120px;height:120px;background:#000;border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;margin:0 auto var(--space-3);padding:10px;text-align:center;box-sizing:border-box;">
+                <span style="font-size:11px;font-weight:600;letter-spacing:0.04em;line-height:1.1;">ALTO EM</span>
+                <span style="font-size:20px;font-weight:700;line-height:1.1;margin-top:6px;">SÓDIO</span>
+              </div>
+              <h3 class="feature-title">Alto em sódio</h3>
+              <p class="feature-text">
+                Aumenta a pressão arterial e o risco de AVC. Presente em
+                macarrão instantâneo, temperos prontos e embutidos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Como ler a tabela nutricional -->
+        <div style="max-width: 800px; margin: 0 auto var(--space-6);">
+          <h2 class="section-heading" style="font-size: var(--text-heading); margin-bottom: var(--space-3);">
+            <span class="accent-green">Como ler</span>
+            <span class="dark">a tabela nutricional</span>
+          </h2>
+          <p class="section-sub" style="margin-bottom: var(--space-4);">
+            A tabela fica na parte de trás da embalagem. Estes são os
+            campos que mais importam:
+          </p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Comece pela porção</h3>
+                <p>A tabela sempre mostra os valores por uma porção específica
+                (ex: "1 fatia de 25 g"). Confira se essa porção corresponde ao
+                que você realmente come. Se você come o dobro, tudo dobra.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Veja o "%VD" (Valor Diário)</h3>
+                <p>Mostra quanto daquele nutriente você consome da recomendação
+                diária. <strong>Regra prática:</strong> abaixo de 5% é pouco,
+                acima de 20% é muito. Para açúcar, gordura saturada e sódio,
+                quanto menor melhor.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Olhe a lista de ingredientes</h3>
+                <p>Os ingredientes aparecem em ordem de quantidade — o primeiro
+                é o mais presente. Se açúcar, xarope de glicose ou óleo de palma
+                estão no topo, o produto é pobre nutricionalmente.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Conte os ingredientes</h3>
+                <p>Regra do Guia Alimentar: se a lista tem mais de 5 ingredientes
+                e você não reconhece a maioria (nomes químicos, corantes com
+                códigos), é um ultraprocessado. Consumir com moderação.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Identificar ultraprocessados -->
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-heading" style="font-size: var(--text-heading); margin-bottom: var(--space-3);">
+            <span class="accent-orange">Como identificar</span>
+            <span class="dark">um ultraprocessado</span>
+          </h2>
+          <p class="section-sub" style="margin-bottom: var(--space-4);">
+            O Guia Alimentar do Ministério da Saúde recomenda evitar
+            ultraprocessados. Aqui vão sinais simples pra reconhecer:
+          </p>
+
+          <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <div class="feature-card" style="text-align:left;">
+              <h3 class="feature-title" style="text-align:left;">Ingredientes com nomes químicos</h3>
+              <p class="feature-text" style="text-align:left;">
+                Realçadores de sabor (glutamato monossódico), corantes com
+                código (INS 129, INS 102), conservantes com números,
+                aromatizantes idênticos ao natural.
+              </p>
+            </div>
+
+            <div class="feature-card" style="text-align:left;">
+              <h3 class="feature-title" style="text-align:left;">Longa vida de prateleira</h3>
+              <p class="feature-text" style="text-align:left;">
+                Comida de verdade estraga. Se um produto dura meses fora da
+                geladeira sem mudar, provavelmente tem muitos conservantes.
+              </p>
+            </div>
+
+            <div class="feature-card" style="text-align:left;">
+              <h3 class="feature-title" style="text-align:left;">Precisa de propaganda</h3>
+              <p class="feature-text" style="text-align:left;">
+                Feijão, arroz e banana não fazem propaganda na TV.
+                Salgadinho, refrigerante e biscoito recheado, sim. Isso
+                já é uma dica.
+              </p>
+            </div>
+
+            <div class="feature-card" style="text-align:left;">
+              <h3 class="feature-title" style="text-align:left;">Alegações de saúde na frente</h3>
+              <p class="feature-text" style="text-align:left;">
+                "Zero açúcar", "fonte de vitaminas", "com fibras" na frente
+                de um biscoito ou cereal geralmente escondem um produto que
+                não deveria estar na sua cesta com frequência.
+              </p>
+            </div>
+
+            <div class="feature-card" style="text-align:left;">
+              <h3 class="feature-title" style="text-align:left;">Não parece comida de verdade</h3>
+              <p class="feature-text" style="text-align:left;">
+                Se a forma final não lembra nenhum ingrediente natural —
+                um salgadinho em formato de bolinha colorida, uma "carne
+                reestruturada" — provavelmente é ultraprocessado.
+              </p>
+            </div>
+
+            <div class="feature-card" style="text-align:left;">
+              <h3 class="feature-title" style="text-align:left;">Vem pronto pra comer</h3>
+              <p class="feature-text" style="text-align:left;">
+                Refeições congeladas, macarrão instantâneo, pizza pronta,
+                sanduíche de rede de fast-food. Rápido e prático, mas
+                pobre em nutrientes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Fontes:</strong> Ministério da Saúde – Guia Alimentar para
+          a População Brasileira (2014); Anvisa – Resolução RDC 429/2020
+          (Rotulagem Nutricional Frontal, em vigor desde 2022).
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-text">Projeto Interdisciplinar 2 · 2º termo · 2º semestre 2026</span>
+      <span class="footer-badge">FATEC Marília</span>
+    </div>
+  </footer>
+
+  <script src="js/ui.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

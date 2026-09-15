@@ -35,8 +35,10 @@
 
       <nav class="site-nav" aria-label="Navegação principal">
         <a href="calculadora.html" class="nav-link">Calculadora</a>
+        <a href="peso.html" class="nav-link">Meu peso</a>
         <a href="receitas.html" class="nav-link">Receitas</a>
         <a href="guia.html" class="nav-link">Guia</a>
+        <a href="rotulo.html" class="nav-link">Rótulo</a>
         <a href="unidades.html" class="nav-link">Unidades</a>
       </nav>
 
@@ -53,8 +55,15 @@
   <section class="hero">
     <div class="container">
       <h1 class="hero-headline">
-        <span class="accent-green">Alimente-se melhor,</span><br>
-        <span class="dark">viva melhor</span>
+        <span class="rotating-word" aria-live="polite">
+          <span class="word active" style="color: var(--color-verdant-green);">Alimente-se melhor</span>
+          <span class="word" style="color: var(--color-ember-orange);">Cuide da sua saúde</span>
+          <span class="word" style="color: var(--color-sky-blue);">Beba mais água</span>
+          <span class="word" style="color: var(--color-mist-blue);">Reduza o sódio</span>
+          <span class="word" style="color: var(--color-iris);">Evite ultraprocessados</span>
+          <span class="word" style="color: var(--color-plum);">Coma comida de verdade</span>
+        </span>
+        <span class="hero-white-text">com o Alimente Melhor</span>
       </h1>
       <p class="hero-sub">
         Calculadora de IMC, receitas saudáveis e orientações práticas baseadas no
@@ -69,37 +78,187 @@
         </a>
       </div>
 
-      <!-- Mockups de tela (representando o site em uso) -->
+      <!-- Wall of iPhones — mostrando telas reais do app -->
       <div class="hero-mockups" aria-hidden="true">
+
+        <!-- Tela 1: Meu peso (gráfico laranja) -->
+        <div class="phone-mockup rotate-left-more">
+          <div class="notch"></div>
+          <div class="phone-status">
+            <span class="phone-status-time">9:41</span>
+            <span class="phone-status-icons">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="currentColor"><path d="M14 0h1a1 1 0 011 1v8a1 1 0 01-1 1h-1V0zM10 2h1a1 1 0 011 1v6a1 1 0 01-1 1h-1V2zM6 4h1a1 1 0 011 1v4a1 1 0 01-1 1H6V4zM2 6h1a1 1 0 011 1v2a1 1 0 01-1 1H2V6z"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M7 2C4.5 2 2.3 3 .7 4.5c-.4.4-.4 1 0 1.4L1.8 7c.4.4 1 .4 1.4 0C4.4 6 5.7 5.4 7 5.4s2.6.6 3.8 1.6c.4.4 1 .4 1.4 0l1-1.1c.4-.4.4-1 0-1.4C11.7 3 9.5 2 7 2z"/></svg>
+              <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="currentColor"/><rect x="2" y="2" width="15" height="6" rx="1" fill="currentColor"/><rect x="20" y="3" width="1.5" height="4" rx="0.5" fill="currentColor"/></svg>
+            </span>
+          </div>
+          <div class="phone-screen">
+            <div class="mockup-title">Meu peso</div>
+            <div class="mockup-tabs">
+              <span class="mockup-tab active">Semana</span>
+              <span class="mockup-tab">Mês</span>
+              <span class="mockup-tab">Ano</span>
+            </div>
+            <div class="mockup-metric-big">
+              <span class="mockup-metric-label">PESO ATUAL</span>
+              <span class="mockup-metric-value">77,9 kg</span>
+              <span class="mockup-metric-sub">Sexta-feira, 12 set</span>
+            </div>
+            <div class="mockup-chart-mini">
+              <svg viewBox="0 0 200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="10,10 40,15 70,22 100,20 130,28 160,35 190,45" fill="none" stroke="#ff6d00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="10" r="2.5" fill="#fff" stroke="#ff6d00" stroke-width="2"/>
+                <circle cx="40" cy="15" r="2.5" fill="#fff" stroke="#ff6d00" stroke-width="2"/>
+                <circle cx="70" cy="22" r="2.5" fill="#fff" stroke="#ff6d00" stroke-width="2"/>
+                <circle cx="100" cy="20" r="2.5" fill="#fff" stroke="#ff6d00" stroke-width="2"/>
+                <circle cx="130" cy="28" r="2.5" fill="#fff" stroke="#ff6d00" stroke-width="2"/>
+                <circle cx="160" cy="35" r="2.5" fill="#fff" stroke="#ff6d00" stroke-width="2"/>
+                <circle cx="190" cy="45" r="2.5" fill="#fff" stroke="#ff6d00" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="mockup-avg">
+              <span>Média móvel</span>
+              <strong>7 dias</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tela 2: Calculadora IMC (resultado) -->
         <div class="phone-mockup rotate-left">
-          <div class="mockup-inner-headline"><span class="g">Cardápio</span><br>da semana</div>
-          <div class="mockup-inner-card">
-            <div class="mockup-metric">7</div>
-            <div class="mockup-label">Receitas saudáveis</div>
+          <div class="notch"></div>
+          <div class="phone-status">
+            <span class="phone-status-time">9:41</span>
+            <span class="phone-status-icons">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="currentColor"><path d="M14 0h1a1 1 0 011 1v8a1 1 0 01-1 1h-1V0zM10 2h1a1 1 0 011 1v6a1 1 0 01-1 1h-1V2zM6 4h1a1 1 0 011 1v4a1 1 0 01-1 1H6V4zM2 6h1a1 1 0 011 1v2a1 1 0 01-1 1H2V6z"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M7 2C4.5 2 2.3 3 .7 4.5c-.4.4-.4 1 0 1.4L1.8 7c.4.4 1 .4 1.4 0C4.4 6 5.7 5.4 7 5.4s2.6.6 3.8 1.6c.4.4 1 .4 1.4 0l1-1.1c.4-.4.4-1 0-1.4C11.7 3 9.5 2 7 2z"/></svg>
+              <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="currentColor"/><rect x="2" y="2" width="15" height="6" rx="1" fill="currentColor"/><rect x="20" y="3" width="1.5" height="4" rx="0.5" fill="currentColor"/></svg>
+            </span>
           </div>
-          <div class="mockup-inner-card">
-            <div class="mockup-metric warn">3x</div>
-            <div class="mockup-label">Frutas por dia</div>
+          <div class="phone-screen">
+            <div class="mockup-title">Seu IMC</div>
+            <div class="mockup-result-card">
+              <span class="mockup-metric-label">RESULTADO</span>
+              <span class="mockup-metric-huge" style="color: #00b33f;">23,4</span>
+              <span class="mockup-metric-classification" style="color: #00b33f;">Peso saudável</span>
+            </div>
+            <div class="mockup-scale">
+              <div class="mockup-scale-bar">
+                <div style="background:#00a9dd;flex:1;"></div>
+                <div style="background:#00b33f;flex:1;"></div>
+                <div style="background:#ff6d00;flex:1;"></div>
+                <div style="background:#ff3400;flex:1;"></div>
+                <div style="background:#ff001e;flex:1;"></div>
+              </div>
+              <div class="mockup-scale-legend">
+                <span>18,5</span><span>25</span><span>30</span><span>40+</span>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Tela 3: Landing (central, destaque) -->
         <div class="phone-mockup center">
-          <div class="mockup-inner-headline"><span class="g">Seu IMC</span><br>é saudável</div>
-          <div class="mockup-inner-card">
-            <div class="mockup-metric">23,4</div>
-            <div class="mockup-label">Faixa de peso normal</div>
+          <div class="notch"></div>
+          <div class="phone-status">
+            <span class="phone-status-time">9:41</span>
+            <span class="phone-status-icons">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="currentColor"><path d="M14 0h1a1 1 0 011 1v8a1 1 0 01-1 1h-1V0zM10 2h1a1 1 0 011 1v6a1 1 0 01-1 1h-1V2zM6 4h1a1 1 0 011 1v4a1 1 0 01-1 1H6V4zM2 6h1a1 1 0 011 1v2a1 1 0 01-1 1H2V6z"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M7 2C4.5 2 2.3 3 .7 4.5c-.4.4-.4 1 0 1.4L1.8 7c.4.4 1 .4 1.4 0C4.4 6 5.7 5.4 7 5.4s2.6.6 3.8 1.6c.4.4 1 .4 1.4 0l1-1.1c.4-.4.4-1 0-1.4C11.7 3 9.5 2 7 2z"/></svg>
+              <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="currentColor"/><rect x="2" y="2" width="15" height="6" rx="1" fill="currentColor"/><rect x="20" y="3" width="1.5" height="4" rx="0.5" fill="currentColor"/></svg>
+            </span>
           </div>
-          <div class="mockup-inner-card">
-            <div class="mockup-metric">1,72 m</div>
-            <div class="mockup-label">Altura registrada</div>
+          <div class="phone-screen">
+            <div class="mockup-brand">
+              <div class="mockup-logo-square"></div>
+              <span class="mockup-brand-name">Alimente Melhor</span>
+            </div>
+            <div class="mockup-hero-headline">
+              <span style="color: #00b33f;">Alimente-se melhor</span><br>
+              <span style="color: #2f2f2f;">com o Alimente Melhor</span>
+            </div>
+            <div class="mockup-hero-cta">Calcular meu IMC →</div>
+            <div class="mockup-mini-feature">
+              <div class="mockup-mini-icon" style="background:#ff5406;"></div>
+              <div class="mockup-mini-text">
+                <strong>Calculadora de IMC</strong>
+                <span>Resultado em segundos</span>
+              </div>
+            </div>
+            <div class="mockup-mini-feature">
+              <div class="mockup-mini-icon" style="background:#00b33f;"></div>
+              <div class="mockup-mini-text">
+                <strong>Meu peso</strong>
+                <span>Gráfico simples</span>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Tela 4: Receitas -->
         <div class="phone-mockup rotate-right">
-          <div class="mockup-inner-headline"><span class="g">Passo 1</span><br>faça de comida de verdade a base</div>
-          <div class="mockup-inner-card">
-            <div class="mockup-metric">10</div>
-            <div class="mockup-label">Passos do Guia Alimentar</div>
+          <div class="notch"></div>
+          <div class="phone-status">
+            <span class="phone-status-time">9:41</span>
+            <span class="phone-status-icons">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="currentColor"><path d="M14 0h1a1 1 0 011 1v8a1 1 0 01-1 1h-1V0zM10 2h1a1 1 0 011 1v6a1 1 0 01-1 1h-1V2zM6 4h1a1 1 0 011 1v4a1 1 0 01-1 1H6V4zM2 6h1a1 1 0 011 1v2a1 1 0 01-1 1H2V6z"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M7 2C4.5 2 2.3 3 .7 4.5c-.4.4-.4 1 0 1.4L1.8 7c.4.4 1 .4 1.4 0C4.4 6 5.7 5.4 7 5.4s2.6.6 3.8 1.6c.4.4 1 .4 1.4 0l1-1.1c.4-.4.4-1 0-1.4C11.7 3 9.5 2 7 2z"/></svg>
+              <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="currentColor"/><rect x="2" y="2" width="15" height="6" rx="1" fill="currentColor"/><rect x="20" y="3" width="1.5" height="4" rx="0.5" fill="currentColor"/></svg>
+            </span>
+          </div>
+          <div class="phone-screen">
+            <div class="mockup-title">Receitas</div>
+            <div class="mockup-recipe">
+              <span class="mockup-recipe-tag" style="color:#00b33f;">Almoço</span>
+              <strong>Arroz integral com brócolis</strong>
+              <span class="mockup-recipe-sub">25 min · 4 porções</span>
+            </div>
+            <div class="mockup-recipe">
+              <span class="mockup-recipe-tag" style="color:#ff5406;">Almoço</span>
+              <strong>Frango grelhado com legumes</strong>
+              <span class="mockup-recipe-sub">30 min · 2 porções</span>
+            </div>
+            <div class="mockup-recipe">
+              <span class="mockup-recipe-tag" style="color:#5856de;">Café da manhã</span>
+              <strong>Vitamina de banana</strong>
+              <span class="mockup-recipe-sub">5 min · 1 porção</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tela 5: Guia alimentar -->
+        <div class="phone-mockup rotate-right-more">
+          <div class="notch"></div>
+          <div class="phone-status">
+            <span class="phone-status-time">9:41</span>
+            <span class="phone-status-icons">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="currentColor"><path d="M14 0h1a1 1 0 011 1v8a1 1 0 01-1 1h-1V0zM10 2h1a1 1 0 011 1v6a1 1 0 01-1 1h-1V2zM6 4h1a1 1 0 011 1v4a1 1 0 01-1 1H6V4zM2 6h1a1 1 0 011 1v2a1 1 0 01-1 1H2V6z"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M7 2C4.5 2 2.3 3 .7 4.5c-.4.4-.4 1 0 1.4L1.8 7c.4.4 1 .4 1.4 0C4.4 6 5.7 5.4 7 5.4s2.6.6 3.8 1.6c.4.4 1 .4 1.4 0l1-1.1c.4-.4.4-1 0-1.4C11.7 3 9.5 2 7 2z"/></svg>
+              <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="currentColor"/><rect x="2" y="2" width="15" height="6" rx="1" fill="currentColor"/><rect x="20" y="3" width="1.5" height="4" rx="0.5" fill="currentColor"/></svg>
+            </span>
+          </div>
+          <div class="phone-screen">
+            <div class="mockup-title">Guia alimentar</div>
+            <div class="mockup-step">
+              <div class="mockup-step-num">1</div>
+              <div class="mockup-step-content">
+                <strong>Coma comida de verdade</strong>
+                <span>Base da alimentação</span>
+              </div>
+            </div>
+            <div class="mockup-step">
+              <div class="mockup-step-num">2</div>
+              <div class="mockup-step-content">
+                <strong>Menos ultraprocessados</strong>
+                <span>Evite salgadinhos</span>
+              </div>
+            </div>
+            <div class="mockup-step">
+              <div class="mockup-step-num">3</div>
+              <div class="mockup-step-content">
+                <strong>Óleo, sal e açúcar</strong>
+                <span>Pequenas quantidades</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -133,8 +292,21 @@
           </p>
         </a>
 
-        <a href="receitas.html" class="feature-card">
+        <a href="peso.html" class="feature-card">
           <div class="feature-icon green" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+              <path d="M4 20L9 14L13 17L20 8 M15 8h5v5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Meu peso</h3>
+          <p class="feature-text">
+            Acompanhe seu peso ao longo do tempo com um gráfico simples.
+            Seus dados ficam só no seu celular.
+          </p>
+        </a>
+
+        <a href="receitas.html" class="feature-card">
+          <div class="feature-icon iris" aria-hidden="true">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
               <path d="M6 14c0-4 3-7 6-7s6 3 6 7v3H6v-3z M4 17h16 M9 10c0-2 1-3 3-3s3 1 3 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -156,6 +328,34 @@
           <p class="feature-text">
             Os dez passos do Guia Alimentar do Ministério da Saúde
             explicados em linguagem simples.
+          </p>
+        </a>
+
+        <a href="rotulo.html" class="feature-card">
+          <div class="feature-icon orange" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="2" stroke="white" stroke-width="2"/>
+              <path d="M8 9h8 M8 13h8 M8 17h5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Entenda o rótulo</h3>
+          <p class="feature-text">
+            Aprenda a ler as embalagens, entender os novos selos da Anvisa
+            e identificar ultraprocessados.
+          </p>
+        </a>
+
+        <a href="unidades.html" class="feature-card">
+          <div class="feature-icon green" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="3" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">UBS e USF perto de você</h3>
+          <p class="feature-text">
+            Digite seu CEP e encontre a unidade de saúde do SUS mais
+            próxima. Atendimento gratuito.
           </p>
         </a>
       </div>
@@ -193,6 +393,8 @@
   </footer>
 
   <!-- Service worker -->
+  <script src="js/ui.js"></script>
+  <script src="js/hero.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {

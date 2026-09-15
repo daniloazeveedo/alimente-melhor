@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu peso — Alimente Melhor</title>
+  <meta name="description" content="Acompanhe seu peso ao longo do tempo. Registro simples, gráfico e exportação. Seus dados ficam só no seu celular.">
+  <meta name="theme-color" content="#ff5406">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/peso.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8 2 4 6 4 12c0 4 3 8 8 8s8-4 8-8c0-6-4-10-8-10z M12 6c-2 2-3 4-3 6 M12 6c2 2 3 4 3 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="brand-name">Alimente Melhor</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="calculadora.html" class="nav-link">Calculadora</a>
+        <a href="peso.html" class="nav-link">Meu peso</a>
+        <a href="receitas.html" class="nav-link">Receitas</a>
+        <a href="guia.html" class="nav-link">Guia</a>
+        <a href="rotulo.html" class="nav-link">Rótulo</a>
+        <a href="unidades.html" class="nav-link">Unidades</a>
+      </nav>
+      <a href="index.html" class="btn-filled">Início</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="peso-wrapper">
+
+          <h1 class="peso-page-title">Peso</h1>
+
+          <!-- Segmentado Semana / Mês / Ano -->
+          <div class="peso-segmented" role="tablist" aria-label="Período">
+            <button type="button" class="peso-seg-btn active" data-period="week" role="tab">Semana</button>
+            <button type="button" class="peso-seg-btn" data-period="month" role="tab">Mês</button>
+            <button type="button" class="peso-seg-btn" data-period="year" role="tab">Ano</button>
+          </div>
+
+          <!-- Card do valor atual -->
+          <div class="peso-current-card" id="peso-current-card">
+            <span class="peso-current-label">Peso atual</span>
+            <span class="peso-current-value" id="peso-current-value">— kg</span>
+            <span class="peso-current-date" id="peso-current-date">Nenhum registro ainda</span>
+          </div>
+
+          <!-- Gráfico grande -->
+          <div class="peso-chart-card" id="peso-chart-card"></div>
+
+          <!-- Média móvel -->
+          <div class="peso-moving-avg" id="peso-moving-avg" style="display:none;">
+            <span class="peso-moving-avg-label">Média móvel</span>
+            <span class="peso-moving-avg-value" id="peso-moving-avg-value">7 dias</span>
+          </div>
+
+          <!-- Nota -->
+          <p class="peso-note">
+            Médias excluem o dia de hoje e dias sem registro.
+          </p>
+
+          <!-- Formulário -->
+          <form class="peso-form" id="peso-form">
+            <h2 class="peso-form-title">Registrar peso</h2>
+            <div class="peso-form-row">
+              <div class="form-field">
+                <label for="peso-data">Data</label>
+                <input type="date" id="peso-data" required>
+              </div>
+              <div class="form-field">
+                <label for="peso-valor">Peso (kg)</label>
+                <input type="text" inputmode="decimal" id="peso-valor" placeholder="Ex: 74,5" required>
+              </div>
+              <button type="submit" class="btn-filled">
+                Registrar
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 5v14 M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Histórico -->
+          <div class="peso-historico">
+            <h3>Histórico</h3>
+            <div class="peso-lista" id="peso-lista"></div>
+          </div>
+
+          <!-- Ações finais -->
+          <div class="peso-actions">
+            <button type="button" class="peso-btn-secondary" id="btn-export">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3v13 M6 10l6 6 6-6 M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Exportar CSV
+            </button>
+            <button type="button" class="peso-btn-danger" id="btn-limpar-tudo">
+              Apagar tudo
+            </button>
+          </div>
+
+          <div class="privacy-note">
+            <strong>Seus dados ficam só no seu celular.</strong>
+            O site não envia seu peso para nenhum servidor, não pede
+            cadastro, não compartilha nada. Se limpar os dados do navegador,
+            o histórico é perdido — por isso existe o botão de exportar.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="footer-text">Projeto Interdisciplinar 2 · 2º termo · 2º semestre 2026</span>
+      <span class="footer-badge">FATEC Marília</span>
+    </div>
+  </footer>
+
+  <script src="js/ui.js"></script>
+  <script src="js/peso.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
