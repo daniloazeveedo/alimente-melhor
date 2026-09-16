@@ -86,7 +86,7 @@
       if (!vazio) {
         vazio = document.createElement('p');
         vazio.className = 'favoritas-vazio';
-        vazio.style.cssText = 'grid-column: 1/-1; text-align: center; padding: var(--space-4); color: var(--color-graphite); opacity: 0.6;';
+        vazio.style.cssText = 'grid-column: 1/-1; text-align: center; padding: var(--space-4); color: var(--text-secondary);';
         vazio.textContent = 'Você ainda não favoritou nenhuma receita. Toque no coração de uma receita para começar.';
         grid.appendChild(vazio);
       }

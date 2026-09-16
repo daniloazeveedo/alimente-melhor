@@ -3,11 +3,12 @@
    Estratégia: cache-first para assets, network-first para HTML
    ============================================================ */
 
-const CACHE_NAME = 'alimente-melhor-v6';
+const CACHE_NAME = 'alimente-melhor-v8';
 
 const PRECACHE_URLS = [
   './',
   './index.html',
+  './onboarding.html',
   './calculadora.html',
   './receitas.html',
   './guia.html',
@@ -20,6 +21,7 @@ const PRECACHE_URLS = [
   './css/style.css',
   './css/unidades.css',
   './css/peso.css',
+  './css/onboarding.css',
   './js/imc.js',
   './js/unidades.js',
   './js/ui.js',
@@ -27,6 +29,7 @@ const PRECACHE_URLS = [
   './js/peso.js',
   './js/lembretes.js',
   './js/hero.js',
+  './js/onboarding.js',
   './data/unidades.json',
   './assets/icons/icon.svg',
   './assets/icons/icon-192.png'

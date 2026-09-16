@@ -2,6 +2,13 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <script>
+    try {
+      if (!localStorage.getItem('alimentemelhor:onboarding-visto')) {
+        location.replace('onboarding.html');
+      }
+    } catch (e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alimente Melhor — Orientação sobre alimentação saudável</title>
   <meta name="description" content="Calculadora de IMC, receitas simples e o Guia Alimentar do Ministério da Saúde em linguagem clara. Projeto educativo da FATEC Marília.">
@@ -36,6 +43,7 @@
       <nav class="site-nav" aria-label="Navegação principal">
         <a href="calculadora.html" class="nav-link">Calculadora</a>
         <a href="peso.html" class="nav-link">Meu peso</a>
+        <a href="lembretes.html" class="nav-link">Lembretes</a>
         <a href="receitas.html" class="nav-link">Receitas</a>
         <a href="guia.html" class="nav-link">Guia</a>
         <a href="rotulo.html" class="nav-link">Rótulo</a>
@@ -156,7 +164,7 @@
           </div>
         </div>
 
-        <!-- Tela 3: Landing (central, destaque) -->
+        <!-- Tela 3: Lembretes de água (central) -->
         <div class="phone-mockup center">
           <div class="notch"></div>
           <div class="phone-status">
@@ -168,27 +176,21 @@
             </span>
           </div>
           <div class="phone-screen">
-            <div class="mockup-brand">
-              <div class="mockup-logo-square"></div>
-              <span class="mockup-brand-name">Alimente Melhor</span>
+            <div class="mockup-title">Lembretes</div>
+            <div class="mockup-result-card">
+              <span class="mockup-metric-label">COPOS HOJE</span>
+              <span class="mockup-metric-huge" style="color:#00a9dd;">5</span>
+              <span class="mockup-metric-classification" style="color:#00a9dd;">Meta: 8 copos</span>
             </div>
-            <div class="mockup-hero-headline">
-              <span style="color: #00b33f;">Alimente-se melhor</span><br>
-              <span style="color: #2f2f2f;">com o Alimente Melhor</span>
-            </div>
-            <div class="mockup-hero-cta">Calcular meu IMC →</div>
-            <div class="mockup-mini-feature">
-              <div class="mockup-mini-icon" style="background:#ff5406;"></div>
-              <div class="mockup-mini-text">
-                <strong>Calculadora de IMC</strong>
-                <span>Resultado em segundos</span>
-              </div>
+            <div class="mockup-avg">
+              <span>Próximo lembrete</span>
+              <strong>em 42 min</strong>
             </div>
             <div class="mockup-mini-feature">
-              <div class="mockup-mini-icon" style="background:#00b33f;"></div>
+              <div class="mockup-mini-icon" style="background:#00a9dd;"></div>
               <div class="mockup-mini-text">
-                <strong>Meu peso</strong>
-                <span>Gráfico simples</span>
+                <strong>Bebi um copo</strong>
+                <span>Toque para contar</span>
               </div>
             </div>
           </div>
@@ -269,7 +271,7 @@
   <section class="section" style="background: var(--color-paper-white);">
     <div class="container">
       <h2 class="section-heading">
-        <span class="accent-orange">Três ferramentas</span>
+        <span class="accent-orange">Ferramentas gratuitas</span>
         <span class="dark">para você começar</span>
       </h2>
       <p class="section-sub">
@@ -356,6 +358,19 @@
           <p class="feature-text">
             Digite seu CEP e encontre a unidade de saúde do SUS mais
             próxima. Atendimento gratuito.
+          </p>
+        </a>
+
+        <a href="lembretes.html" class="feature-card">
+          <div class="feature-icon plum" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Lembretes de água</h3>
+          <p class="feature-text">
+            Configure avisos ao longo do dia e conte os copos que
+            você já bebeu. Simples e sem cadastro.
           </p>
         </a>
       </div>

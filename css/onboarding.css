@@ -1,0 +1,149 @@
+/* ============================================================
+   Onboarding — telas de boas-vindas (primeira visita)
+   ============================================================ */
+
+.onb-body {
+  background: var(--surface-primary);
+}
+
+.onb-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.onb-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3) 0;
+}
+
+.onb-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--text-primary);
+  visibility: hidden;
+}
+
+.onb-progress {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-elevated);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.onb-progress-fill {
+  height: 100%;
+  width: 25%;
+  background: var(--color-ember-orange);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.onb-skip {
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-demibold);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.onb-skip:hover { color: var(--text-primary); }
+
+.onb-screens {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+.onb-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-3) var(--space-4);
+  align-self: center;
+}
+
+.onb-screen.active { display: flex; }
+
+.onb-illustration {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-6);
+}
+
+.onb-illustration.orange { background: var(--color-ember-orange); }
+.onb-illustration.green { background: var(--color-verdant-green); }
+.onb-illustration.iris { background: var(--color-iris); }
+
+.onb-dot {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.onb-illustration .dot-a {
+  width: 36px;
+  height: 36px;
+  top: -8px;
+  right: -12px;
+  background: var(--color-sky-blue);
+}
+
+.onb-illustration .dot-b {
+  width: 24px;
+  height: 24px;
+  bottom: -4px;
+  left: -8px;
+  background: var(--color-plum);
+}
+
+.onb-headline {
+  font-size: 32px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.onb-subtext {
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 360px;
+}
+
+.onb-footer {
+  padding: var(--space-3) var(--space-3) var(--space-6);
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.onb-cta {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 720px) {
+  .onb-headline { font-size: 40px; }
+  .onb-illustration { width: 240px; height: 240px; }
+}

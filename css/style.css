@@ -277,7 +277,7 @@ button {
   flex-wrap: wrap;
 }
 
-/* Hero mockups — 5 iPhones em fanning estilo Foodnoms */
+/* Hero mockups — 5 iPhones retos, em linha, levemente sobrepostos */
 .hero-mockups {
   margin-top: var(--space-8);
   display: flex;
@@ -372,11 +372,13 @@ button {
 }
 .phone-status-icons svg { display: block; }
 
-.phone-mockup.rotate-left-more { transform: rotate(-12deg) translateY(20px); z-index: 1; }
-.phone-mockup.rotate-left { transform: rotate(-6deg) translateY(6px); z-index: 2; }
-.phone-mockup.center { transform: translateY(-14px); z-index: 5; }
-.phone-mockup.rotate-right { transform: rotate(6deg) translateY(6px); z-index: 2; }
-.phone-mockup.rotate-right-more { transform: rotate(12deg) translateY(20px); z-index: 1; }
+/* Todos os telefones ficam retos e alinhados na mesma base — sem fan/rotação,
+   cada um sobrepõe levemente o anterior da esquerda para a direita. */
+.phone-mockup.rotate-left-more { z-index: 1; }
+.phone-mockup.rotate-left { z-index: 2; }
+.phone-mockup.center { z-index: 3; }
+.phone-mockup.rotate-right { z-index: 4; }
+.phone-mockup.rotate-right-more { z-index: 5; }
 
 /* -----------------------------------
    Conteúdo das telas dos iPhones
@@ -507,40 +509,6 @@ button {
   font-weight: var(--weight-demibold);
 }
 
-/* Landing dentro do mockup */
-.mockup-brand {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-.mockup-logo-square {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  background: #ff5406;
-}
-.mockup-brand-name {
-  font-size: 13px;
-  font-weight: var(--weight-bold);
-  color: #2f2f2f;
-}
-.mockup-hero-headline {
-  font-size: 15px;
-  font-weight: var(--weight-bold);
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-.mockup-hero-cta {
-  background: #ff5406;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: var(--weight-demibold);
-  padding: 10px 12px;
-  border-radius: 20px;
-  text-align: center;
-  margin-bottom: 14px;
-}
 .mockup-mini-feature {
   display: flex;
   align-items: center;
@@ -690,22 +658,16 @@ button {
    Feature cards — 3 colunas em desktop
    ----------------------------------- */
 .feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-3);
   max-width: 1080px;
   margin: 0 auto;
 }
 
-@media (max-width: 960px) {
-  .feature-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 560px) {
-  .feature-grid { grid-template-columns: 1fr; }
-}
-
 .feature-card {
+  flex: 0 1 320px;
   background: var(--surface-elevated);
   border-radius: var(--radius);
   padding: var(--card-padding);
@@ -729,6 +691,7 @@ button {
 .feature-icon.green { background: var(--color-verdant-green); }
 .feature-icon.blue { background: var(--color-sky-blue); }
 .feature-icon.iris { background: var(--color-iris); }
+.feature-icon.plum { background: var(--color-plum); }
 
 .feature-title {
   font-size: var(--text-heading-sm);
@@ -1141,6 +1104,29 @@ button {
 .fav-btn.ativo {
   background: var(--surface-primary);
 }
+
+/* -----------------------------------
+   Alternador de tema (claro/escuro)
+   ----------------------------------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--color-ember-orange);
+  color: var(--color-paper-white);
+}
+
+.theme-toggle svg { display: block; }
 
 /* -----------------------------------
    Menu mobile — hambúrguer laranja

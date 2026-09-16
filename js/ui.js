@@ -5,6 +5,68 @@
 (function () {
   'use strict';
 
+  const TEMA_KEY = 'alimentemelhor:theme';
+
+  const iconeSol = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5 M12 19.5V22 M4.2 4.2l1.8 1.8 M18 18l1.8 1.8 M2 12h2.5 M19.5 12H22 M4.2 19.8L6 18 M18 6l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  const iconeLua = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 119.5 4a7 7 0 0010.5 10.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+
+  function temaDoSistema() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function temaEfetivo() {
+    try {
+      const salvo = localStorage.getItem(TEMA_KEY);
+      if (salvo === 'light' || salvo === 'dark') return salvo;
+    } catch (e) {}
+    return temaDoSistema();
+  }
+
+  function aplicarTema(tema) {
+    document.body.classList.remove('force-light', 'force-dark');
+    document.body.classList.add(tema === 'dark' ? 'force-dark' : 'force-light');
+  }
+
+  function injetarToggleTema() {
+    const container = document.querySelector('.site-header .container');
+    if (!container) return;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'theme-toggle';
+
+    function atualizarBotao() {
+      const atual = temaEfetivo();
+      btn.innerHTML = atual === 'dark' ? iconeSol : iconeLua;
+      btn.setAttribute('aria-label', atual === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro');
+    }
+
+    let salvo = null;
+    try { salvo = localStorage.getItem(TEMA_KEY); } catch (e) {}
+    if (salvo === 'light' || salvo === 'dark') aplicarTema(salvo);
+
+    atualizarBotao();
+
+    btn.addEventListener('click', () => {
+      const novo = temaEfetivo() === 'dark' ? 'light' : 'dark';
+      aplicarTema(novo);
+      try { localStorage.setItem(TEMA_KEY, novo); } catch (e) {}
+      atualizarBotao();
+    });
+
+    const referencia = container.querySelector('.btn-filled');
+    if (referencia) container.insertBefore(btn, referencia);
+    else container.appendChild(btn);
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        let temPreferenciaSalva = false;
+        try { temPreferenciaSalva = !!localStorage.getItem(TEMA_KEY); } catch (e) {}
+        if (!temPreferenciaSalva) atualizarBotao();
+      });
+    }
+  }
+
   function injetarMenuMobile() {
     const container = document.querySelector('.site-header .container');
     if (!container) return;
@@ -59,6 +121,7 @@
   }
 
   function inicializar() {
+    injetarToggleTema();
     injetarMenuMobile();
     injetarBotaoCompartilhar();
   }
